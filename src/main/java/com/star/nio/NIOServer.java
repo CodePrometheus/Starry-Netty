@@ -71,7 +71,6 @@ public class NIOServer {
                     ByteBuffer buffer = (ByteBuffer) key.attachment();
                     channel.read(buffer);
                     System.out.println("from client " + new String(buffer.array()));
-
                 }
 
                 // 手动从集合中移除当前的selectionKey，防止重复操作

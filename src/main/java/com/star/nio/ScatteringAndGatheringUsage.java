@@ -60,7 +60,7 @@ public class ScatteringAndGatheringUsage {
             long byteWrite = 0;
             while (byteWrite < messageLength) {
                 long l = socketChannel.write(byteBuffers);
-                byteWrite += 1;
+                byteWrite += l;
             }
 
             // 将所有的buffer进行clear
