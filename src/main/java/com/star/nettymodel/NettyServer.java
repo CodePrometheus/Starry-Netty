@@ -14,6 +14,7 @@ public class NettyServer {
 
     public static void main(String[] args) throws InterruptedException {
         // bossGroup只是负责处理连接请求，真正和客户端业务处理交给workerGroup处理，两个都是无线循环
+        // bossGroup和workerGroup含有的子线程(NioEventLoop)的个数，默认实际为 CPU核数*2
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
